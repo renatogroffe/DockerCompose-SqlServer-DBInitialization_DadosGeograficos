@@ -1,6 +1,6 @@
 services:
   sqlserver:
-    image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
+    image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       SA_PASSWORD: "SqlServer2019!"
       ACCEPT_EULA: "Y"
