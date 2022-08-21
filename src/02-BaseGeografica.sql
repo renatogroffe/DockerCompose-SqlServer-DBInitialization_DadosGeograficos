@@ -1,16 +1,7 @@
-CREATE DATABASE BaseGeografica
-GO
-
 USE BaseGeografica
 GO
 
-CREATE TABLE dbo.Regioes(
-	IdRegiao int NOT NULL,
-	CodRegiao varchar(2) NOT NULL,
-	NomeRegiao varchar(20) NOT NULL,
-	CONSTRAINT PK_Regioes PRIMARY KEY (IdRegiao)
-)
-GO
+-- Cadastramento de Regioes
 
 INSERT INTO dbo.Regioes(IdRegiao, CodRegiao, NomeRegiao)
 VALUES (1, 'CO', 'Centro-Oeste')
@@ -27,17 +18,8 @@ VALUES (4, 'SE', 'Sudeste')
 INSERT INTO dbo.Regioes(IdRegiao, CodRegiao, NomeRegiao)
 VALUES (5, 'S', 'Sul')
 
-GO
 
-CREATE TABLE dbo.Estados(
-	SiglaEstado char(2) NOT NULL,
-	NomeEstado varchar(20) NOT NULL,
-	NomeCapital varchar(20) NOT NULL,
-	IdRegiao int NOT NULL,
-	CONSTRAINT PK_Estados PRIMARY KEY (SiglaEstado),
-	CONSTRAINT FK_Estado_Regiao FOREIGN KEY (IdRegiao) REFERENCES dbo.Regioes(IdRegiao)
-)
-GO
+-- Cadastramento de Estados
 
 INSERT INTO dbo.Estados(SiglaEstado, NomeEstado, NomeCapital, IdRegiao)
 VALUES ('AC', 'Acre', 'Rio Branco', 3)

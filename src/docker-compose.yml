@@ -12,6 +12,7 @@ services:
     depends_on:
       - sqlserver
     volumes:
-      - ./BaseGeografica.sql:/tmp/BaseGeografica.sql
+      - ./01-BaseGeografica.sql:/tmp/01-BaseGeografica.sql
+      - ./02-BaseGeografica.sql:/tmp/02-BaseGeografica.sql
       - ./init-basegeografica.sh:/tmp/init-basegeografica.sh
     command: /bin/bash ./tmp/init-basegeografica.sh
